@@ -5,9 +5,13 @@ class Show < ActiveRecord::Base
   end
   
   def self.most_popular_show
-    Show.all.each do |s|
-      s.highest_rating.first
-    end
     
   end 
+  
+  def self.lowest_rating
+    Show.minimum("rating")
+  end
+  
+  def least_popular_show
+  end
 end
